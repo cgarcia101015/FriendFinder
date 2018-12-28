@@ -1,0 +1,23 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "FriendFinder app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgarcia101015/FriendFinder.git"
+  },
+  "author": "Carlos M Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgarcia101015/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/cgarcia101015/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
