@@ -192,6 +192,24 @@
 $("#submit").on("click", function(event) {
   event.preventDefault();
 
+  var sampleObject = {
+    name: "Carlos",
+    scores: [
+      1,
+      4,
+      2,
+      3,
+      4,
+      5,
+      1,
+      3,
+      5,
+      5
+    ]
+  };
+
+  
+
   var userData = {
     name: $("#name").val(),
     photo: $("#photo").val(),
@@ -209,7 +227,26 @@ $("#submit").on("click", function(event) {
 
     ]
   };
+
+  var user1 = sampleObject.scores;
+  var user2 = userData.scores;
+
+ 
 console.log(userData);
+
+
+var totalDifference;
+
+for (i = 0; i <= user1.length; i++) {
+  if (user1[i] > user2[i]) {
+    totalDifference = user1[i] - user2[i];
+    console.log(totalDifference);
+  } else if ( user2[i] > user1[i]) {
+    totalDifference = user2[i] - user1[i];
+  }
+
+
+}
 
   // AJAX post the data to the friends API.
   $.post("/api/friends", userData, function(data) {
@@ -222,6 +259,8 @@ console.log(userData);
       // } else {
       //   alert("Please fill out all fields before submitting!");
       // }
+
+      console.log
   });
 
   
