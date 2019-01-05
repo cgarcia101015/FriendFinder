@@ -192,21 +192,21 @@
 $("#submit").on("click", function(event) {
   event.preventDefault();
 
-  var sampleObject = {
-    name: "Carlos",
-    scores: [
-      1,
-      4,
-      2,
-      3,
-      4,
-      5,
-      1,
-      3,
-      5,
-      5
-    ]
-  };
+  // var sampleObject = {
+  //   name: "Carlos",
+  //   scores: [
+  //     1,
+  //     4,
+  //     2,
+  //     3,
+  //     4,
+  //     5,
+  //     1,
+  //     3,
+  //     5,
+  //     5
+  //   ]
+  // };
 
   
 
@@ -214,7 +214,7 @@ $("#submit").on("click", function(event) {
     name: $("#name").val(),
     photo: $("#photo").val(),
     scores: [
-      $("#q1").val(),
+      parseInt($("#q1").val()),
       $("#q2").val(),
       $("#q3").val(),
       $("#q4").val(),
@@ -228,40 +228,43 @@ $("#submit").on("click", function(event) {
     ]
   };
 
-  var user1 = sampleObject.scores;
-  var user2 = userData.scores;
+  $.post("/api/friends", userData, function(res) {
+    console.log(res);
+  });
+
+});
 
  
-console.log(userData);
 
 
-var totalDifference;
+// var totalDifference = 0;
 
-for (i = 0; i <= user1.length; i++) {
-  if (user1[i] > user2[i]) {
-    totalDifference = user1[i] - user2[i];
-    console.log(totalDifference);
-  } else if ( user2[i] > user1[i]) {
-    totalDifference = user2[i] - user1[i];
-  }
+// for (i = 0; i <= user1.length; i++) {
+//   totalDifference += Math.abs(user1[i] - user2[i]);
+  // if (user1[i] > user2[i]) {
+  //   totalDifference = user1[i] - user2[i];
+  //   console.log(totalDifference);
+  // } else if ( user2[i] > user1[i]) {
+  //   totalDifference = user2[i] - user1[i];
+  // }
 
 
-}
+
 
   // AJAX post the data to the friends API.
-  $.post("/api/friends", userData, function(data) {
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          $("#match-name").text(data.name);
-          $("#match-img").attr("src", data.photo);
-          // Show the modal with the best match
-          $("#results-modal").modal("toggle");
-        });
-      // } else {
-      //   alert("Please fill out all fields before submitting!");
-      // }
+  // $.post("/api/friends", userData, function(data) {
+  //         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+  //         $("#match-name").text(data.name);
+  //         $("#match-img").attr("src", data.photo);
+  //         // Show the modal with the best match
+  //         $("#results-modal").modal("toggle");
+  //       });
+  //     // } else {
+  //     //   alert("Please fill out all fields before submitting!");
+  //     // }
 
-      console.log
-  });
+  //     console.log
+  // });
 
   
 </script>
