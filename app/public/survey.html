@@ -192,29 +192,13 @@
 $("#submit").on("click", function(event) {
   event.preventDefault();
 
-  // var sampleObject = {
-  //   name: "Carlos",
-  //   scores: [
-  //     1,
-  //     4,
-  //     2,
-  //     3,
-  //     4,
-  //     5,
-  //     1,
-  //     3,
-  //     5,
-  //     5
-  //   ]
-  // };
-
   
-
+//captures user input
   var userData = {
     name: $("#name").val(),
     photo: $("#photo").val(),
     scores: [
-      parseInt($("#q1").val()),
+      $("#q1").val(),
       $("#q2").val(),
       $("#q3").val(),
       $("#q4").val(),
@@ -233,20 +217,6 @@ $("#submit").on("click", function(event) {
   });
 
 });
-
- 
-
-
-// var totalDifference = 0;
-
-// for (i = 0; i <= user1.length; i++) {
-//   totalDifference += Math.abs(user1[i] - user2[i]);
-  // if (user1[i] > user2[i]) {
-  //   totalDifference = user1[i] - user2[i];
-  //   console.log(totalDifference);
-  // } else if ( user2[i] > user1[i]) {
-  //   totalDifference = user2[i] - user1[i];
-  // }
 
 
 
