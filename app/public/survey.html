@@ -208,12 +208,12 @@ $("#submit").on("click", function(event) {
       $("#q8").val(),
       $("#q9").val(),
       $("#q10").val()
-
     ]
   };
 
   $.post("/api/friends", userData, function(res) {
     console.log(res);
+    console.log("This is your match!!! " + res.name + "<br>" + res.photo);
   });
 
 });
