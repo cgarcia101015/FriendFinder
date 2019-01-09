@@ -214,27 +214,27 @@ $("#submit").on("click", function(event) {
   $.post("/api/friends", userData, function(res) {
     console.log(res);
     console.log("This is your match!!! " + res.name + "<br>" + res.photo);
+    $("#match-name").text(res.name);
+    $("#match-img").attr("src", res.photo);
+    // Show the modal with the best match
+    $("#results-modal").modal("toggle");
   });
+  //  // AJAX post the data to the friends API.
+  // $.post("/api/friends", userData, function (data) {
+  //   // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+    
+  // });
 
 });
 
 
 
 
-  // AJAX post the data to the friends API.
-  // $.post("/api/friends", userData, function(data) {
-  //         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-  //         $("#match-name").text(data.name);
-  //         $("#match-img").attr("src", data.photo);
-  //         // Show the modal with the best match
-  //         $("#results-modal").modal("toggle");
-  //       });
-  //     // } else {
-  //     //   alert("Please fill out all fields before submitting!");
-  //     // }
+ 
+       
 
-  //     console.log
-  // });
+      
+  
 
   
 </script>
